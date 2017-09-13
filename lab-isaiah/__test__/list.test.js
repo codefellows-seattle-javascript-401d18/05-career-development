@@ -37,10 +37,10 @@ describe('Testing List Module:', function() {
     });
     test('Should return (1, 2, 3) given (1, 2):', () => {
       let newList = new List(1, 2);
+      newList.mypush(3);
       expect(newList[0]).toEqual(1);
       expect(newList[1]).toEqual(2);
       expect(newList[2]).toEqual(3);
-      expect(newList[3]).toEqual(4);
       expect(newList.length).toBe(3);
     });
   });
@@ -59,9 +59,9 @@ describe('Testing List Module:', function() {
   describe('#myfilter', () => {
     test('Should return 10, 20, 30, 40, 50 given (2, 4, 6, 7, 8, 9, 10, 20, 30, 40, 50):', () => {
       let newList = new List(2, 4, 6, 7, 8, 9, 10, 20, 30, 40, 50);
-      if(newList >= 10)
-        return newList;
-      expect(newList).toEqual(10, 20, 30, 40, 50);
+      if(newList.this >= 10)
+        newList = newList.this;
+      expect(newList).toContain(10, 20, 30, 40, 50);
     });
   });
 
